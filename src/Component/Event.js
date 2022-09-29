@@ -1,6 +1,6 @@
 import React from "react";
 import Birthday from "../images/Birthday cake.png";
-import { ImLocation2 } from "react-icons/im";
+import { ImLocation2, ImCalendar } from "react-icons/im";
 
 const Event = ({ data }) => {
   const { end, start, location, host, event } = data;
@@ -20,13 +20,20 @@ const Event = ({ data }) => {
             <h1 className="text-5xl font-bold text-left text-accent">
               {event}
             </h1>
-            <p className="py-6 text-left text-neutral">{host}</p>
-            <div>
+            <p className="py-6 text-left text-neutral">Hosted by {host}</p>
+            <div className="flex justify-start items-center">
               <ImLocation2 />
 
-              <div>
+              <div className=" ml-2">
                 <p>{start}</p>
                 to <span>{end}</span>
+              </div>
+            </div>
+            <div className="flex justify-start items-center mt-3">
+              <ImCalendar />
+
+              <div className=" ml-2">
+                <p>{location}</p>
               </div>
             </div>
           </div>
